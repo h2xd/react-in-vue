@@ -1,58 +1,40 @@
-import { ref, onMounted, onBeforeUnmount, onUpdated, defineProps } from 'vue';
-import ReactDOM from 'react-dom';
+import {ref, onMounted, onBeforeUnmount, onUpdated, defineComponent} from 'vue';
+import {createRoot} from 'react-dom/client';
 import React from 'react';
-import { ButtonProps } from 'shared';
 
-const firstLoad = new Promise(resolve => setTimeout(resolve, 1000));
+import Button from './components/Button'
 
-async function fetchButton() {
-  // simulate long network delay
-  await firstLoad;
-
-  // uncomment to simulate failed load
-  // throw new Error("Failed to load button from remote.");
-
-  return (await import('home/Button')).default;
-}
-
-export default {
+export default defineComponent({
   name: 'ReactButton',
-  props: defineProps<ButtonProps>(),
-  setup(props: ButtonProps) {
-    const root = ref(null);
-    const error = ref(null);
-    const ButtonComponent = ref(null);
-
-    
-    function updateReactComponent() {
-      if (!ButtonComponent.value || !!error.value) return;
-      
-      ReactDOM.render(React.createElement(ButtonComponent.value, props), root.value);
-    }
-    
-    function unmountReactComponent() {
-      root.value && ReactDOM.unmountComponentAtNode(root.value);
-    }
-    
-    onMounted(updateReactComponent);
-    onUpdated(updateReactComponent);
-    onBeforeUnmount(unmountReactComponent);
-    
-    fetchButton()
-    .then(b => {
-      ButtonComponent.value = b;
-      updateReactComponent();
-    })
-    .catch(e => {
-      console.log("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::", e.toString());
-      error.value = e;
-      });
-
-    return { root, error };
+  props: {
+    text: String,
+    type: String,
   },
   template: `
-    <!-- this element is just served to mount the React element  -->
-    <div v-if="error">error loading button</div>
-    <div v-else ref="root">loading button...</div>
+    <div ref="rootElement">WILL BE REPLACED</div>
   `,
-};
+  setup(props) {
+    const rootElement = ref();
+    const root = ref<ReturnType<typeof createRoot>>()
+
+    function updateReactComponent() {
+      root.value!.render(React.createElement(Button, props));
+    }
+
+    function unmountReactComponent() {
+      // root.value && ReactDOM.unmountComponentAtNode(root.value);
+    }
+
+    onMounted(() => {
+      console.log(rootElement.value)
+
+      root.value = createRoot(rootElement.value!)
+      updateReactComponent()
+    });
+
+    onUpdated(() => updateReactComponent());
+    onBeforeUnmount(() => unmountReactComponent);
+
+    return {rootElement};
+  },
+})

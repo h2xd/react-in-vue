@@ -1,5 +1,5 @@
 import * as React from "react";
-import {ButtonProps} from "shared"
+import {ButtonProps} from "../../../shared.types"
 
 
 export default ({text, type}: ButtonProps) => (

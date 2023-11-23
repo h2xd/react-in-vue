@@ -22,7 +22,7 @@ export default defineComponent({
     }
 
     function unmountReactComponent() {
-      // root.value && ReactDOM.unmountComponentAtNode(root.value);
+      root.value?.unmount()
     }
 
     onMounted(() => {

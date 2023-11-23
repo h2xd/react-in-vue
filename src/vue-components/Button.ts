@@ -4,7 +4,7 @@ import Button from '../react-components/Button'
 import { createReactWrapper } from "../utils/dryExample";
 
 export default defineComponent({
-  name: 'ReactButton',
+  name: 'Button',
   props: {
     text: String,
     type: String,

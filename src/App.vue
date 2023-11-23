@@ -1,12 +1,19 @@
 <template>
     <p>Hello World</p>
-    <Input />
+    <InputWithButton />
     <HmqButton :text="text" type="button" @click="clickHandler" />
+
+    <hr />
+
+    <Input v-model="inputModelValue" />
+    Input value: {{ inputModelValue }}
 </template>
 
 <script setup lang="ts">
-import Input from "./vue-components/Input.vue";
+import InputWithButton from "./vue-components/InputWithButton.vue";
 import HmqButton from "./vue-components/Button"
+import Input from "./vue-components/Input"
+
 import {ref} from "vue";
 
 function clickHandler() {
@@ -14,6 +21,7 @@ function clickHandler() {
 }
 
 const text = ref('test')
+const inputModelValue = ref('')
 
 
 window.setInterval(() => {

@@ -1,7 +1,7 @@
 import {ref, defineComponent, onUpdated} from 'vue';
 
 import Button from '../react-components/Button'
-import {createReactWrapper} from "../utils/dryExample";
+import { createReactWrapper } from "../utils/dryExample";
 
 export default defineComponent({
   name: 'ReactButton',

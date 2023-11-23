@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import federation from '@originjs/vite-plugin-federation'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,13 +10,6 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    federation({
-      name: 'layout',
-      filename: 'remoteEntry.js',
-      remotes: {
-        home: 'http://localhost:8081/assets/remoteEntry.js'
-      }
-    })
   ],
   build: {
     minify: true

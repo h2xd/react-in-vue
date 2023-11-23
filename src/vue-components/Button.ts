@@ -2,7 +2,7 @@ import {ref, onMounted, onBeforeUnmount, onUpdated, defineComponent} from 'vue';
 import {createRoot} from 'react-dom/client';
 import React from 'react';
 
-import Button from './components/Button'
+import Button from '../react-components/Button'
 
 export default defineComponent({
   name: 'ReactButton',

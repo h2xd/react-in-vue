@@ -14,13 +14,13 @@
         "noImplicitAny": true,
         "allowJs": true,
         "outDir": "./dist/",
-        "typeRoots": ["../shared.types.ts"], 
+        "typeRoots": ["../shared.types.ts"],
         "paths": {
             "shared": ["../shared.types.ts"],
         }
     },
     "include": [
-        "./src/**/*", "../shared.types.ts"
+        "./src/**/*"
     ],
     "exclude": ["node_modules"]
 }

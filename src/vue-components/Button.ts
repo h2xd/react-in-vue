@@ -1,8 +1,7 @@
-import {ref, onMounted, onBeforeUnmount, onUpdated, defineComponent} from 'vue';
-import {createRoot} from 'react-dom/client';
-import React from 'react';
+import {ref, defineComponent, onUpdated} from 'vue';
 
 import Button from '../react-components/Button'
+import {createReactWrapper} from "../utils/dryExample";
 
 export default defineComponent({
   name: 'ReactButton',
@@ -15,25 +14,14 @@ export default defineComponent({
   `,
   setup(props, context) {
     const rootElement = ref();
-    const root = ref<ReturnType<typeof createRoot>>()
 
-    function updateReactComponent() {
-      root.value!.render(React.createElement(Button, {...props, ...context.attrs}));
-    }
+    const { update } = createReactWrapper({
+      component: Button,
+      props: {...props, ...context.attrs},
+      rootElement
+    })
 
-    function unmountReactComponent() {
-      root.value?.unmount()
-    }
-
-    onMounted(() => {
-      console.log(rootElement.value)
-
-      root.value = createRoot(rootElement.value!)
-      updateReactComponent()
-    });
-
-    onUpdated(() => updateReactComponent());
-    onBeforeUnmount(() => unmountReactComponent);
+    onUpdated(() => update({...props, ...context.attrs}));
 
     return {rootElement};
   },

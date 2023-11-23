@@ -9,6 +9,7 @@ export default defineComponent({
     text: String,
     type: String,
   },
+  inheritAttrs: false,
   template: `
     <div ref="rootElement">WILL BE REPLACED</div>
   `,

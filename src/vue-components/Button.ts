@@ -13,12 +13,12 @@ export default defineComponent({
   template: `
     <div ref="rootElement">WILL BE REPLACED</div>
   `,
-  setup(props) {
+  setup(props, context) {
     const rootElement = ref();
     const root = ref<ReturnType<typeof createRoot>>()
 
     function updateReactComponent() {
-      root.value!.render(React.createElement(Button, props));
+      root.value!.render(React.createElement(Button, {...props, ...context.attrs}));
     }
 
     function unmountReactComponent() {

@@ -6,13 +6,13 @@ export default defineConfig({
   base: 'https://h2xd.github.io/react-in-vue/',
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.esm-bundler.js'
-    }
+      vue: 'vue/dist/vue.esm-bundler.js',
+    },
   },
   plugins: [
     vue(),
   ],
   build: {
-    minify: true
-  }
+    minify: true,
+  },
 })

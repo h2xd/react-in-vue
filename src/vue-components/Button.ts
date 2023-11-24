@@ -1,7 +1,7 @@
-import {ref, defineComponent, onUpdated} from 'vue';
+import { defineComponent, onUpdated, ref } from 'vue'
 
 import Button from '../react-components/Button'
-import { createReactWrapper } from "../utils/dryExample";
+import { createReactWrapper } from '../utils/dryExample'
 
 export default defineComponent({
   name: 'Button',
@@ -14,16 +14,16 @@ export default defineComponent({
     <div ref="rootElement">WILL BE REPLACED</div>
   `,
   setup(props, context) {
-    const rootElement = ref();
+    const rootElement = ref()
 
     const { update } = createReactWrapper({
       component: Button,
-      props: {...props, ...context.attrs},
-      rootElement
+      props: { ...props, ...context.attrs },
+      rootElement,
     })
 
-    onUpdated(() => update({...props, ...context.attrs}));
+    onUpdated(() => update({ ...props, ...context.attrs }))
 
-    return {rootElement};
+    return { rootElement }
   },
 })

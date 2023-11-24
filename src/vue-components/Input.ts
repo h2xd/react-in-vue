@@ -1,37 +1,37 @@
-import {ref, defineComponent, onUpdated} from 'vue';
+import { defineComponent, onUpdated, ref } from 'vue'
 
+import type { ChangeEvent } from 'react'
 import Input from '../react-components/Input'
-import { createReactWrapper } from "../utils/dryExample";
-import {ChangeEvent} from "react";
+import { createReactWrapper } from '../utils/dryExample'
 
 export default defineComponent({
-    name: 'Input',
-    props: {
-        modelValue: String,
-    },
-    emits: ['update:modelValue'],
-    inheritAttrs: false,
-    template: `
+  name: 'Input',
+  props: {
+    modelValue: String,
+  },
+  emits: ['update:modelValue'],
+  inheritAttrs: false,
+  template: `
     <div ref="rootElement">WILL BE REPLACED</div>
   `,
-    setup(props, context) {
-        const rootElement = ref();
+  setup(props, context) {
+    const rootElement = ref()
 
-        const { modelValue, ...restProps } = props
+    const { modelValue, ...restProps } = props
 
-        function onChange(event: ChangeEvent<HTMLInputElement>) {
-            context.emit('update:modelValue', event.target.value)
-            context.attrs.onChange?.(event)
-        }
+    function onChange(event: ChangeEvent<HTMLInputElement>) {
+      context.emit('update:modelValue', event.target.value)
+      context.attrs.onChange?.(event)
+    }
 
-        const { update } = createReactWrapper({
-            component: Input,
-            props: {...restProps, ...context.attrs, onChange},
-            rootElement
-        })
+    const { update } = createReactWrapper({
+      component: Input,
+      props: { ...restProps, ...context.attrs, onChange },
+      rootElement,
+    })
 
-        onUpdated(() => update({...restProps, ...context.attrs, onChange}));
+    onUpdated(() => update({ ...restProps, ...context.attrs, onChange }))
 
-        return {rootElement};
-    },
+    return { rootElement }
+  },
 })

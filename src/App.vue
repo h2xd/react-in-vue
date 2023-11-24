@@ -1,5 +1,6 @@
 <template>
-    <p>Hello World</p>
+  <h1 class="text-xl font-black mb-6">React in Vue Demo</h1>
+
     <InputWithButton />
     <HmqButton :text="text" type="button" @click="clickHandler" />
 

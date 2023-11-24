@@ -7,7 +7,7 @@ export interface ButtonProps {
 }
 
 export default ({ text, type, ...props }: ButtonProps) => (
-  <button type={type} style={{ border: '5px solid green' }} {...props}>
+  <button type={type} className="bg-yellow-400 hover:bg-yellow-500 cursor-pointer transition-colors py-0.5 px-3 rounded focus:ring-4 ring-blue-400" {...props}>
     {text}
   </button>
 )

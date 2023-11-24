@@ -1,11 +1,11 @@
 import { defineComponent, onUpdated, ref } from 'vue'
 
 import type { ChangeEvent } from 'react'
-import Input from '../react-components/Input'
+import Input from '../react-components/ReactInput'
 import { createReactWrapper } from '../utils/dryExample'
 
 export default defineComponent({
-  name: 'Input',
+  name: 'VueInput',
   props: {
     modelValue: String,
   },

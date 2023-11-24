@@ -1,10 +1,10 @@
 import { defineComponent, onUpdated, ref } from 'vue'
 
-import Button from '../react-components/Button'
+import Button from '../react-components/ReactButton'
 import { createReactWrapper } from '../utils/dryExample'
 
 export default defineComponent({
-  name: 'Button',
+  name: 'VueButton',
   props: {
     text: String,
     type: String,

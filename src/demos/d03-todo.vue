@@ -9,7 +9,14 @@ const todoItems = ref([])
 <template>
   <Demo>
     <template #title>
-      Stateful React component. Classic Todo App
+      Stateful React component
+    </template>
+
+    <template #description>
+      Let's take it to another level by having a reactive element in Vue.
+      Pass it to React and back through a two way data binding.
+
+      What time is it? Todo App o'clock ⏰
     </template>
 
     <Todo v-model="todoItems" />

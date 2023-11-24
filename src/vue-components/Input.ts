@@ -1,4 +1,4 @@
-import { ref, defineComponent, onUpdated} from 'vue';
+import {ref, defineComponent, onUpdated} from 'vue';
 
 import Input from '../react-components/Input'
 import { createReactWrapper } from "../utils/dryExample";
@@ -7,7 +7,7 @@ import {ChangeEvent} from "react";
 export default defineComponent({
     name: 'Input',
     props: {
-        modelValue: String
+        modelValue: String,
     },
     emits: ['update:modelValue'],
     inheritAttrs: false,

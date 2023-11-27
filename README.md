@@ -1,6 +1,6 @@
 # React in Vue
 
-This a simple example on how to mount React components in a Vue context, while keeping most of the Vue features like two-way-databinding.
+This a simple example on how to mount [React](https://react.dev/) components in a [Vue](https://vuejs.org/) context with [Vite](https://vitejs.dev/), while keeping most of the Vue features like [two-way data-binding (v-model)](https://vuejs.org/guide/components/v-model.html).
 
 This is not the most ideal approach and suites just as PoC. Feel free to reach out to make the example better or just fork it. ❤️
 

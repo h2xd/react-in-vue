@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import Button from '../../components/Button'
 import Token from './token.vue'
+
+defineEmits(['reset'])
 </script>
 
 <template>
@@ -11,7 +14,7 @@ import Token from './token.vue'
     <slot name="description" />
   </p>
 
-  <div class="border-2 rounded border-gray-300 mb-8 flex flex-col gap-2">
+  <div class="border-2 rounded border-gray-300 mb-8">
     <div class="p-4">
       <slot name="default" />
     </div>
@@ -27,7 +30,7 @@ import Token from './token.vue'
           </a>
         </span>
 
-        <slot name="refExtra" />
+        <Button text="reset" @click="$emit('reset')" />
       </div>
 
       <pre class="p-4 bg-gray-50"><code><slot name="code" /></code></pre>

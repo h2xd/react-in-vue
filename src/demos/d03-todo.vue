@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import type { TodoItem } from '../components/Todo'
 import Todo from '../components/Todo'
-import Button from '../components/Button'
 import Demo from './components/demo.vue'
 import Token from './components/token.vue'
 
@@ -15,7 +14,7 @@ const todoItems = ref<TodoItem[]>(initialTodoItems)
 </script>
 
 <template>
-  <Demo>
+  <Demo @reset="todoItems = initialTodoItems">
     <template #title>
       Stateful <Token href="https://react.dev/" text="React" /> module
     </template>
@@ -28,10 +27,6 @@ const todoItems = ref<TodoItem[]>(initialTodoItems)
     </template>
 
     <Todo v-model="todoItems" />
-
-    <template #refExtra>
-      <Button text="reset" @click="todoItems = initialTodoItems" />
-    </template>
 
     <template #code>
       {{ JSON.stringify(todoItems, null, 2) }}

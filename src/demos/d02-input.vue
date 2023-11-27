@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Input from '../components/Input'
-import Button from '../components/Button'
 import Demo from './components/demo.vue'
 import Token from './components/token.vue'
 
@@ -9,7 +8,7 @@ const inputModelValue = ref('test')
 </script>
 
 <template>
-  <Demo>
+  <Demo @reset="inputModelValue = 'test'">
     <template #title>
       <Token href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" text="Input" />
       element with
@@ -25,10 +24,6 @@ const inputModelValue = ref('test')
     </template>
 
     <Input v-model="inputModelValue" />
-
-    <template #refExtra>
-      <Button text="reset" @click="inputModelValue = 'test'" />
-    </template>
 
     <template #code>
       {{ inputModelValue }}

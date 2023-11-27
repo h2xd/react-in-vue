@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import Button from '../components/Button'
 import Demo from './components/demo.vue'
 import Token from './components/token.vue'
@@ -18,10 +18,13 @@ function reset() {
   time.value = nowWhenMounted
   clickedTimes.value = 0
 }
+
+const wasClicked = computed(() => time.value > nowWhenMounted,
+)
 </script>
 
 <template>
-  <Demo>
+  <Demo @reset="reset">
     <template #title>
       <Token href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" text="button" /> with <Token href="https://vuejs.org/guide/essentials/event-handling.html" text="@click" /> handler
     </template>
@@ -34,14 +37,10 @@ function reset() {
       Click the button 👇
     </template>
 
-    <Button :text="time > nowWhenMounted ? `clicked after mounted (${clickedTimes}x)` : 'click me'" @click="updateTime" />
-
-    <template #refExtra>
-      <Button text="reset" @click="reset" />
-    </template>
+    <Button :text="wasClicked ? `clicked after mounted (${clickedTimes}x)` : 'click me'" @click="updateTime" />
 
     <template #code>
-      {{ time }}
+      {{ wasClicked ? 'Last clicked at' : 'Mounted at' }}: {{ time }}
     </template>
   </Demo>
 </template>

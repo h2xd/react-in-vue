@@ -24,7 +24,7 @@ import Link from './demos/components/link.vue'
   </div>
 
   <p class="dark:text-gray-300">
-    Ever had to play matchmaker with your app? Yep, we're talking about making React.js components cozy in their new Vue.js home. It's like giving your app a makeover, but for code – because frameworks deserve love too! 💖✨
+    Ever had to play matchmaker with your app? Yep, we're talking about making React.js components cozy in their new Vue.js home. It's like giving your app a makeover, but for code! 💖✨
   </p>
 
   <p class="mt-2 dark:text-gray-300">
@@ -54,7 +54,7 @@ import Link from './demos/components/link.vue'
 
   85% {
     opacity: 1;
-    transform: scale(1) translate(0, -40px);
+    transform: scale(1) translate(0, -30px);
   }
 
   100% {

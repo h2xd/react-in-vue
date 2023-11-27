@@ -13,13 +13,13 @@ export function Button({ text, type = 'button', variant = 'primary', ...props }:
 
   switch (variant) {
     case 'primary':
-      className.push('bg-emerald-200 hover:bg-emerald-300 border-emerald-300 hover:border-emerald-400 text-emerald-900 dark:bg-emerald-800 hover:bg-emerald-700 border-emerald-700 hover:border-emerald-600 text-emerald-200')
+      className.push('bg-emerald-200 hover:bg-emerald-300 border-emerald-300 hover:border-emerald-400 text-emerald-900 dark:bg-emerald-800 dark:hover:bg-emerald-700 dark:border-emerald-700 dark:hover:border-emerald-600 dark:text-emerald-200')
       break
     case 'secondary':
-      className.push('bg-gray-200 hover:bg-gray-300 border-gray-300 hover:border-gray-400 text-gray-900 dark:bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-gray-200')
+      className.push('bg-gray-200 hover:bg-gray-300 border-gray-300 hover:border-gray-400 text-gray-900 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-200')
       break
     case 'destructive':
-      className.push('bg-rose-200 hover:bg-rose-300 border-rose-300 hover:border-rose-400 text-rose-900 dark:bg-rose-800 hover:bg-rose-700 border-rose-700 hover:border-rose-600 text-rose-200')
+      className.push('bg-rose-200 hover:bg-rose-300 border-rose-300 hover:border-rose-400 text-rose-900 dark:bg-rose-800 dark:hover:bg-rose-700 dark:border-rose-700 dark:hover:border-rose-600 dark:text-rose-200')
       break
   }
 

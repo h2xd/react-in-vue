@@ -25,7 +25,9 @@ import Link from './demos/components/link.vue'
 
   <p class="dark:text-gray-300">
     Ever had to play matchmaker with your app? Yep, we're talking about making React.js components cozy in their new Vue.js home. It's like giving your app a makeover, but for code – because frameworks deserve love too! 💖✨
-    <br>
+  </p>
+
+  <p class="mt-2 dark:text-gray-300">
     Checkout the <Link href="https://github.com/h2xd/react-in-vue" text="react-in-vue repository" /> for implementation details.
   </p>
 

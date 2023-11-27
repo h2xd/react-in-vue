@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Input from '../react-components/ReactInput'
+import Input from '../components/Input'
 import Demo from './components/demo.vue'
 
 const inputModelValue = ref('test')

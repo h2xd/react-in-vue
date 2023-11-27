@@ -1,8 +1,9 @@
 import type { ChangeEvent } from 'react'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { Button } from './ReactButton'
-import { Input } from './ReactInput'
+import { defineControlledVueContext } from '../utils/defineVueContext'
+import { Button } from './Button'
+import { Input } from './Input'
 
 export interface TodoItem {
   key: string
@@ -14,7 +15,7 @@ interface Props {
   onNewItem: () => TodoItem[]
 }
 
-export default function ReactTodo(props: Props) {
+export function Todo(props: Props) {
   const [todoItems, updateTodoItems] = useState<TodoItem[]>([])
 
   const [newTodoValue, updateNewTodoValue] = useState('')
@@ -68,3 +69,21 @@ export default function ReactTodo(props: Props) {
     </div>
   )
 }
+
+export default defineControlledVueContext({
+  component: Todo,
+  defineProps(props, attrs, emit) {
+    const { modelValue, ...restAttrs } = attrs
+
+    function onNewItem(newItems: TodoItem[]) {
+      emit('update:modelValue', newItems)
+    }
+
+    return {
+      ...props,
+      ...restAttrs,
+      value: modelValue,
+      onNewItem,
+    }
+  },
+})

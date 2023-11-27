@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import Button from '../react-components/ReactButton'
+import Button from '../components/Button'
 import Demo from './components/demo.vue'
 
 const time = ref(Date.now())

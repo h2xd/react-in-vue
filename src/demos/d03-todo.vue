@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Todo from '../vue-components/VueTodo'
+import type { TodoItem } from '../components/Todo'
+import Todo from '../components/Todo'
 import Demo from './components/demo.vue'
 
-const todoItems = ref([])
+const todoItems = ref<TodoItem[]>([
+  {
+    key: Date.now(),
+    title: 'First todo',
+  },
+])
 </script>
 
 <template>

@@ -6,7 +6,7 @@ import D03Todo from './demos/d03-todo.vue'
 
 <template>
   <div class="flex flex-row items-center justify-between mb-8">
-    <h1 class="font-black text-[3rem]">
+    <h1 class="font-black text-gray-900 text-[3rem]">
       React in Vue Demo
     </h1>
 

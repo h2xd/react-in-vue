@@ -4,6 +4,7 @@ import type { TodoItem } from '../components/Todo'
 import Todo from '../components/Todo'
 import Button from '../components/Button'
 import Demo from './components/demo.vue'
+import Token from './components/token.vue'
 
 const initialTodoItems: TodoItem[] = [{
   key: Date.now().toString(),
@@ -16,13 +17,13 @@ const todoItems = ref<TodoItem[]>(initialTodoItems)
 <template>
   <Demo>
     <template #title>
-      Stateful React component
+      Stateful <Token href="https://react.dev/" text="React" /> module
     </template>
 
     <template #description>
-      Let's take it to another level by having a reactive element in Vue.
-      Pass it to React and back through a two way data binding.
-
+      Let's take it to another level by having a reactive element in <Token href="https://vuejs.org/" text="Vue" />.
+      Pass it to <Token href="https://react.dev/" text="React" /> and back through a two way data binding.
+      <br>
       What time is it? Todo App o'clock ⏰
     </template>
 

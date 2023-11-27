@@ -1,9 +1,8 @@
 import type { ChangeEvent } from 'react'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-
-import ReactButton from './ReactButton'
-import ReactInput from './ReactInput'
+import { Button } from './ReactButton'
+import { Input } from './ReactInput'
 
 export interface TodoItem {
   key: string
@@ -56,15 +55,15 @@ export default function ReactTodo(props: Props) {
           <div className="mb-3 border-gray-300 border-b pb-3 flex flex-row justify-between items-center" key={todoItem.key}>
             {todoItem.title}
 
-            <ReactButton text="Remove" onClick={() => { removeTodo(todoItem.key) }}></ReactButton>
+            <Button text="Remove" onClick={() => { removeTodo(todoItem.key) }}></Button>
           </div>
         )
       })}
 
       <div className="flex flex-row justify-between items-center">
-        <ReactInput placeholder="Add new todo" value={newTodoValue} onChange={event => updateNewTodoValue(event.target.value)} onKeyDown={addTodo} />
+        <Input placeholder="Add new todo" value={newTodoValue} onChange={event => updateNewTodoValue(event.target.value)} onKeyDown={addTodo} />
 
-        {todoItems.length > 0 && <ReactButton text="Remove All" onClick={() => { updateTodoItems([]) }}></ReactButton>}
+        {todoItems.length > 0 && <Button text="Remove All" onClick={() => { updateTodoItems([]) }}></Button>}
       </div>
     </div>
   )

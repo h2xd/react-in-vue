@@ -1,3 +1,5 @@
+![React in Vue](./images/react-in-vue.png)
+
 # React in Vue
 
 This a simple example on how to mount [React](https://react.dev/) components in a [Vue](https://vuejs.org/) context with [Vite](https://vitejs.dev/), while keeping most of the Vue features like [two-way data-binding (v-model)](https://vuejs.org/guide/components/v-model.html).

@@ -25,7 +25,7 @@ export function defineControlledVueContext<Props>({ component, defineProps = def
     emits: ['update:modelValue'],
     inheritAttrs: false,
     template: `
-      <div ref="rootElement"></div>
+      <span ref="rootElement"></span>
     `,
     setup(props, context) {
       const rootElement = ref()

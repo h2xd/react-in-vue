@@ -27,10 +27,12 @@ const todoItems = ref<TodoItem[]>([
 
     <Todo v-model="todoItems" />
 
-    Get through the Vue Model the items, if you want.
+    <div class="bg-gray-50 rounded text-xs mt-4">
+      <div class="border-b p-2">
+        <code class="px-2 py-0.5 bg-gray-200 rounded">ref</code> data values within Vue
+      </div>
 
-    <pre>
-      <code>{{ JSON.stringify(todoItems, null, 2) }}</code>
-    </pre>
+      <pre class="p-2"><code>{{ JSON.stringify(todoItems, null, 2) }}</code></pre>
+    </div>
   </Demo>
 </template>

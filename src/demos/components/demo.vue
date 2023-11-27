@@ -37,7 +37,7 @@ defineEmits(['reset'])
           </a>
         </span>
 
-        <Button text="reset" @click="$emit('reset')" />
+        <Button text="reset" variant="secondary" @click="$emit('reset')" />
       </div>
 
       <pre class="p-4 bg-gray-50"><code><slot name="code" /></code></pre>

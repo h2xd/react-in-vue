@@ -12,7 +12,7 @@ export interface TodoItem {
 
 interface Props {
   value: TodoItem[]
-  onNewItem: () => TodoItem[]
+  onNewItem: (todoItems: TodoItem[]) => void
 }
 
 export function Todo(props: Props) {
@@ -56,15 +56,13 @@ export function Todo(props: Props) {
           <div className="mb-3 border-gray-300 border-b pb-3 flex flex-row justify-between items-center" key={todoItem.key}>
             {todoItem.title}
 
-            <Button text="Remove" onClick={() => { removeTodo(todoItem.key) }}></Button>
+            <Button variant="destructive" text="Remove" onClick={() => { removeTodo(todoItem.key) }}></Button>
           </div>
         )
       })}
 
       <div className="flex flex-row justify-between items-center">
         <Input placeholder="Add new todo" value={newTodoValue} onChange={event => updateNewTodoValue(event.target.value)} onKeyDown={addTodo} />
-
-        {todoItems.length > 0 && <Button text="Remove All" onClick={() => { updateTodoItems([]) }}></Button>}
       </div>
     </div>
   )

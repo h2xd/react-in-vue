@@ -76,26 +76,26 @@ import Link from './demos/components/link.vue'
 }
 
 .heart-1 {
-  animation-duration: 2.5s;
-  animation-delay: 1s;
+  animation-duration: 4.5s;
+  animation-delay: 5s;
   left: calc(50% - 12px);
 }
 
 .heart-2 {
-  animation-duration: 3s;
+  animation-duration: 5s;
   animation-delay: 1.5s;
   left: calc(50% + 12px);
 }
 
 .heart-3 {
-  animation-duration: 1.7s;
-  animation-delay: 0.9s;
+  animation-duration: 3.7s;
+  animation-delay: 2s;
   left: calc(50% + 8px);
 }
 
 .heart-4 {
   animation-duration: 2.1s;
-  animation-delay: 2s;
+  animation-delay: 4s;
   left: calc(50% - 8px);
 }
 

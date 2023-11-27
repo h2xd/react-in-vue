@@ -4,6 +4,8 @@ This a simple example on how to mount React components in a Vue context, while k
 
 This is not the most ideal approach and suites just as PoC. Feel free to reach out to make the example better or just fork it. ❤️
 
+![https://img.shields.io/badge/go_to_Demo-37a779?style=for-the-badge](https://h2xd.github.io/react-in-vue/)
+
 ## Development
 
 Install the following dependencies to start the development of the project.

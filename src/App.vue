@@ -19,7 +19,7 @@ import Link from './demos/components/link.vue'
     </div>
 
     <h1 class="font-black text-gray-900 text-[2rem] md:text-[3rem] dark:text-gray-200">
-      React in Vue Demo
+      React in Vue
     </h1>
   </div>
 

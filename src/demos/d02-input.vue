@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Input from '../vue-components/VueInput'
+import Input from '../react-components/ReactInput'
 import Demo from './components/demo.vue'
 
-const inputModelValue = ref('')
+const inputModelValue = ref('test')
 </script>
 
 <template>

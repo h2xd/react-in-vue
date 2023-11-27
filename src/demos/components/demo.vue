@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import Button from '../../components/Button'
 import Token from './token.vue'
+import Link from './link.vue'
+
+interface Props {
+  href: string
+}
+
+defineProps<Props>()
 
 defineEmits(['reset'])
 </script>
 
 <template>
-  <h2 class="font-bold text-gray-900 mb-2 text-xl mt-12">
+  <h2 class="font-bold text-gray-900 mb-2 text-xl mt-16">
     <slot name="title" />
   </h2>
 
@@ -14,7 +21,7 @@ defineEmits(['reset'])
     <slot name="description" />
   </p>
 
-  <div class="border-2 rounded border-gray-300 mb-8">
+  <div class="border-2 rounded border-gray-300 mb-2">
     <div class="p-4">
       <slot name="default" />
     </div>
@@ -36,4 +43,5 @@ defineEmits(['reset'])
       <pre class="p-4 bg-gray-50"><code><slot name="code" /></code></pre>
     </div>
   </div>
+  <Link :href="href" text="View implementation of this demo" class-name="text-sm" />
 </template>

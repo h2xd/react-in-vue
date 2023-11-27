@@ -24,7 +24,7 @@ const wasClicked = computed(() => time.value > nowWhenMounted,
 </script>
 
 <template>
-  <Demo @reset="reset">
+  <Demo href="https://github.com/h2xd/react-in-vue/blob/main/src/demos/d01-button.vue" @reset="reset">
     <template #title>
       <Token href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" text="button" /> with <Token href="https://vuejs.org/guide/essentials/event-handling.html" text="@click" /> handler
     </template>

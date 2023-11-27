@@ -8,7 +8,7 @@ const inputModelValue = ref('test')
 </script>
 
 <template>
-  <Demo @reset="inputModelValue = 'test'">
+  <Demo href="https://github.com/h2xd/react-in-vue/blob/main/src/demos/d02-input.vue" @reset="inputModelValue = 'test'">
     <template #title>
       <Token href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" text="Input" />
       element with

@@ -14,7 +14,7 @@ const todoItems = ref<TodoItem[]>(initialTodoItems)
 </script>
 
 <template>
-  <Demo @reset="todoItems = initialTodoItems">
+  <Demo href="https://github.com/h2xd/react-in-vue/blob/main/src/demos/d03-todo.vue" @reset="todoItems = initialTodoItems">
     <template #title>
       Stateful <Token href="https://react.dev/" text="React" /> module
     </template>

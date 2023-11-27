@@ -6,11 +6,7 @@ import Link from './demos/components/link.vue'
 </script>
 
 <template>
-  <div class="flex flex-row items-center justify-between mb-8">
-    <h1 class="font-black text-gray-900 text-[3rem] dark:text-gray-200">
-      React in Vue Demo
-    </h1>
-
+  <div class="flex flex-col items-center justify-between mb-8 gap-2">
     <div class="flex flex-row love-in-the-air">
       <img src="./public/images/vue-logo.svg" width="60" height="60" alt="Vue.js logo" class="-rotate-6">
       <img src="./public/images/react-logo.svg" width="60" height="60" alt="React.js logo" class="rotate-6">
@@ -21,6 +17,10 @@ import Link from './demos/components/link.vue'
       <span class="heart heart-4">❤️</span>
       <span class="heart heart-5">❤️</span>
     </div>
+
+    <h1 class="font-black text-gray-900 text-[2rem] md:text-[3rem] dark:text-gray-200">
+      React in Vue Demo
+    </h1>
   </div>
 
   <p class="dark:text-gray-300">

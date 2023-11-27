@@ -11,11 +11,13 @@ import Token from './token.vue'
     <slot name="description" />
   </p>
 
-  <div class="border-2 rounded border-gray-300 p-4 mb-8 flex flex-col gap-2">
-    <slot name="default" />
+  <div class="border-2 rounded border-gray-300 mb-8 flex flex-col gap-2">
+    <div class="p-4">
+      <slot name="default" />
+    </div>
 
-    <div class="bg-gray-50 rounded text-xs mt-4">
-      <div class="border-b p-2 flex flex-row items-center justify-between">
+    <div class="text-xs border-t">
+      <div class="border-b border-gray-200 py-2 px-4 flex flex-row items-center justify-between">
         <span>
           <Token href="https://vuejs.org/api/reactivity-core.html#ref" text="ref" />
           value within
@@ -28,7 +30,7 @@ import Token from './token.vue'
         <slot name="refExtra" />
       </div>
 
-      <pre class="p-2"><code><slot name="code" /></code></pre>
+      <pre class="p-4 bg-gray-50"><code><slot name="code" /></code></pre>
     </div>
   </div>
 </template>

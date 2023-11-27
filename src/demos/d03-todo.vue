@@ -2,14 +2,15 @@
 import { ref } from 'vue'
 import type { TodoItem } from '../components/Todo'
 import Todo from '../components/Todo'
+import Button from '../components/Button'
 import Demo from './components/demo.vue'
 
-const todoItems = ref<TodoItem[]>([
-  {
-    key: Date.now(),
-    title: 'First todo',
-  },
-])
+const initialTodoItems = [{
+  key: Date.now(),
+  title: 'First todo',
+}]
+
+const todoItems = ref<TodoItem[]>(initialTodoItems)
 </script>
 
 <template>
@@ -27,12 +28,12 @@ const todoItems = ref<TodoItem[]>([
 
     <Todo v-model="todoItems" />
 
-    <div class="bg-gray-50 rounded text-xs mt-4">
-      <div class="border-b p-2">
-        <code class="px-2 py-0.5 bg-gray-200 rounded">ref</code> data values within Vue
-      </div>
+    <template #refExtra>
+      <Button text="reset" @click="todoItems = initialTodoItems" />
+    </template>
 
-      <pre class="p-2"><code>{{ JSON.stringify(todoItems, null, 2) }}</code></pre>
-    </div>
+    <template #code>
+      {{ JSON.stringify(todoItems, null, 2) }}
+    </template>
   </Demo>
 </template>

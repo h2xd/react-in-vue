@@ -15,14 +15,12 @@ const inputModelValue = ref('test')
 
     <Input v-model="inputModelValue" />
 
-    <div class="bg-gray-50 rounded text-xs mt-4">
-      <div class="border-b p-2 flex flex-row items-center justify-between">
-        <span><code class="px-2 py-0.5 bg-gray-200 rounded">ref</code> value within Vue</span>
+    <template #refExtra>
+      <Button text="reset" @click="inputModelValue = 'test'" />
+    </template>
 
-        <span><Button text="reset" @click="inputModelValue = 'test'" /></span>
-      </div>
-
-      <pre class="p-2"><code>{{ inputModelValue }}</code></pre>
-    </div>
+    <template #code>
+      {{ inputModelValue }}
+    </template>
   </Demo>
 </template>

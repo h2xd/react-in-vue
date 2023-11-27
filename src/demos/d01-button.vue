@@ -3,10 +3,19 @@ import { ref } from 'vue'
 import Button from '../components/Button'
 import Demo from './components/demo.vue'
 
-const time = ref(Date.now())
+const nowWhenMounted = Date.now()
+
+const time = ref(nowWhenMounted)
+const clickedTimes = ref(0)
 
 function updateTime() {
   time.value = Date.now()
+  clickedTimes.value += 1
+}
+
+function reset() {
+  time.value = nowWhenMounted
+  clickedTimes.value = 0
 }
 </script>
 
@@ -16,8 +25,14 @@ function updateTime() {
       Button with @click handler within Vue
     </template>
 
-    <Button text="hello" @click="updateTime" />
+    <Button :text="time > nowWhenMounted ? `clicked after mounted (${clickedTimes}x)` : 'click me'" @click="updateTime" />
 
-    <div>Last Update: {{ time }}</div>
+    <template #refExtra>
+      <Button text="reset" @click="reset" />
+    </template>
+
+    <template #code>
+      {{ time }}
+    </template>
   </Demo>
 </template>

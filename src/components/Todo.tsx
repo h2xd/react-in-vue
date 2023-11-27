@@ -53,7 +53,7 @@ export function Todo(props: Props) {
     <div>
       {todoItems.map((todoItem) => {
         return (
-          <div className="mb-3 border-gray-300 border-b pb-3 flex flex-row justify-between items-center" key={todoItem.key}>
+          <div className="mb-3 border-gray-300 border-b pb-3 flex flex-row justify-between items-center dark:border-gray-800" key={todoItem.key}>
             {todoItem.title}
 
             <Button variant="destructive" text="Remove" onClick={() => { removeTodo(todoItem.key) }}></Button>

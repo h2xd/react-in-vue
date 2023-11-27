@@ -7,7 +7,7 @@ import Link from './demos/components/link.vue'
 
 <template>
   <div class="flex flex-row items-center justify-between mb-8">
-    <h1 class="font-black text-gray-900 text-[3rem]">
+    <h1 class="font-black text-gray-900 text-[3rem] dark:text-gray-200">
       React in Vue Demo
     </h1>
 
@@ -23,7 +23,7 @@ import Link from './demos/components/link.vue'
     </div>
   </div>
 
-  <p>
+  <p class="dark:text-gray-300">
     Sometimes you have to migrate your application from one framework to another.
     In this demo we are looking into putting React.js based components into Vue.js.
     <br>

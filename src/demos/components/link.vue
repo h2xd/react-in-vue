@@ -9,7 +9,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <a :href="href" target="_blank" :class="`text-blue-700 hover:underline ${className}`">
+  <a :href="href" target="_blank" :class="`text-blue-700 hover:underline dark:text-blue-400 ${className}`">
     {{ text }}
   </a>
 </template>

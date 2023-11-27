@@ -5,8 +5,8 @@ import Todo from '../components/Todo'
 import Button from '../components/Button'
 import Demo from './components/demo.vue'
 
-const initialTodoItems = [{
-  key: Date.now(),
+const initialTodoItems: TodoItem[] = [{
+  key: Date.now().toString(),
   title: 'First todo',
 }]
 

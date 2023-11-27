@@ -8,8 +8,8 @@ import Link from './demos/components/link.vue'
 <template>
   <div class="flex flex-col items-center justify-between mb-8 gap-2">
     <div class="flex flex-row love-in-the-air">
-      <img src="./public/images/vue-logo.svg" width="60" height="60" alt="Vue.js logo" class="-rotate-6">
-      <img src="./public/images/react-logo.svg" width="60" height="60" alt="React.js logo" class="rotate-6">
+      <img src="./public/images/react-logo.svg" width="60" height="60" alt="React.js logo" class="-rotate-6">
+      <img src="./public/images/vue-logo.svg" width="60" height="60" alt="Vue.js logo" class="rotate-6">
 
       <span class="heart heart-1">❤️</span>
       <span class="heart heart-2">❤️</span>
@@ -79,25 +79,25 @@ import Link from './demos/components/link.vue'
 .heart-1 {
   animation-duration: 4.5s;
   animation-delay: 5s;
-  left: calc(50% - 12px);
+  left: calc(50% - 40px);
 }
 
 .heart-2 {
   animation-duration: 5s;
   animation-delay: 1.5s;
-  left: calc(50% + 12px);
+  left: calc(50% + 20px);
 }
 
 .heart-3 {
   animation-duration: 3.7s;
   animation-delay: 2s;
-  left: calc(50% + 8px);
+  left: calc(50% + 30px);
 }
 
 .heart-4 {
   animation-duration: 2.1s;
   animation-delay: 4s;
-  left: calc(50% - 8px);
+  left: calc(50% - 20px);
 }
 
 .heart-5 {

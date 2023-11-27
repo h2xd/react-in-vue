@@ -24,10 +24,9 @@ import Link from './demos/components/link.vue'
   </div>
 
   <p class="dark:text-gray-300">
-    Sometimes you have to migrate your application from one framework to another.
-    In this demo we are looking into putting React.js based components into Vue.js.
+    Ever had to play matchmaker with your app? Yep, we're talking about making React.js components cozy in their new Vue.js home. It's like giving your app a makeover, but for code – because frameworks deserve love too! 💖✨
     <br>
-    Please also make sure to checkout the <Link href="https://github.com/h2xd/react-in-vue" text="react-in-vue repository" /> for implementation details.
+    Checkout the <Link href="https://github.com/h2xd/react-in-vue" text="react-in-vue repository" /> for implementation details.
   </p>
 
   <D01Button />

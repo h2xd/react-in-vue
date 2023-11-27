@@ -1,19 +1,31 @@
 import { defineComponent, onUpdated, ref } from 'vue'
-import { createReactWrapper } from './dryExample'
+import { createReactWrapper } from './createReactWrapper'
 
 interface Options {
-  name: string
   component: JSX.Element
-  defineProps: (props, attrs, emit) => Record<string, any>
+  defineProps?: (props, attrs, emit) => Record<string, any>
 }
 
-export function defineVueContext({ name, component, defineProps }: Options) {
+function defaultDefineProps(props, attrs) {
+  return {
+    ...props,
+    ...attrs,
+  }
+}
+
+export function defineVueContext(component: JSX.Element) {
+  return defineControlledVueContext({
+    component,
+  })
+}
+
+export function defineControlledVueContext<Props>({ component, defineProps = defaultDefineProps }: Options<Props>) {
   return defineComponent({
-    name,
+    name: `React${component.name}`,
     emits: ['update:modelValue'],
     inheritAttrs: false,
     template: `
-      <div ref="rootElement">WILL BE REPLACED</div>
+      <div ref="rootElement"></div>
     `,
     setup(props, context) {
       const rootElement = ref()

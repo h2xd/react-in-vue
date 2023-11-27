@@ -2,7 +2,7 @@ import { defineComponent, onUpdated, ref } from 'vue'
 
 import type { TodoItem } from '../react-components/ReactTodo'
 import ReactTodo from '../react-components/ReactTodo'
-import { createReactWrapper } from '../utils/dryExample'
+import { createReactWrapper } from '../utils/createReactWrapper'
 
 export default defineComponent({
   name: 'VueTodo',

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { ChangeEvent } from 'react'
-import { defineVueContext } from '../utils/defineVueContext'
+import { defineControlledVueContext } from '../utils/defineVueContext'
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement>
 
@@ -10,8 +10,7 @@ export function Input(props: InputProps) {
   )
 }
 
-export default defineVueContext({
-  name: 'Input',
+export default defineControlledVueContext({
   component: Input,
   defineProps(props, attrs, emit) {
     // eslint-disable-next-line unused-imports/no-unused-vars

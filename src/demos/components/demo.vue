@@ -15,7 +15,14 @@
 
     <div class="bg-gray-50 rounded text-xs mt-4">
       <div class="border-b p-2 flex flex-row items-center justify-between">
-        <span><code class="px-2 py-0.5 bg-gray-200 rounded">ref</code> value within Vue</span>
+        <span>
+          <a href="https://vuejs.org/api/reactivity-core.html#ref" target="_blank" class="hover:underline hover:text-blue-600"><code class="px-2 py-0.5 bg-gray-200 rounded">ref</code></a>
+          value within
+          <a href="https://vuejs.org/" target="_blank" class="hover:underline hover:text-blue-600">
+            <img src="../../public/images/vue-logo.svg" width="16" height="16" alt="Vue.js logo" class="inline-block">
+            Vue.js
+          </a>
+        </span>
 
         <slot name="refExtra" />
       </div>

@@ -26,15 +26,15 @@ const wasClicked = computed(() => time.value > nowWhenMounted,
 <template>
   <Demo href="https://github.com/h2xd/react-in-vue/blob/main/src/demos/d01-button.vue" @reset="reset">
     <template #title>
-      <Token href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" text="button" /> with <Token href="https://vuejs.org/guide/essentials/event-handling.html" text="@click" /> handler
+      <Token href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" text="<button>" /> with <Token href="https://vuejs.org/guide/essentials/event-handling.html" text="@click" /> handler
     </template>
 
     <template #description>
-      Classic handling were you can assign a handler to an element.
-      In this example we are passing a
-      <Token href="https://react.dev/learn/passing-props-to-a-component" text="prop" /> and
-      <Token href="https://vuejs.org/guide/essentials/event-handling.html" text="@click" /> event handler to <Token href="https://react.dev/" text="React" />.
-      Click the button 👇
+      In the grand theater of code, we've got a classic handling performance for you!
+      Passing the React component a <Token href="https://react.dev/learn/passing-props-to-a-component" text="prop" />
+      and setting the stage for the <Token href="https://vuejs.org/guide/essentials/event-handling.html" text="@click" /> event blockbuster.
+      <br>
+      Click that button and witness the code drama unfold! 🎭
     </template>
 
     <Button :text="wasClicked ? `clicked after mounted (${clickedTimes}x)` : 'click me'" @click="updateTime" />

@@ -20,10 +20,8 @@ const todoItems = ref<TodoItem[]>(initialTodoItems)
     </template>
 
     <template #description>
-      Let's take it to another level by having a reactive element in <Token href="https://vuejs.org/" text="Vue" />.
-      Pass it to <Token href="https://react.dev/" text="React" /> and back through a two way data binding.
-      <br>
-      What time is it? Todo App o'clock ⏰
+      Time to level up the code game! <Token href="https://vuejs.org/" text="Vue" /> brings the reactive vibes, <Token href="https://react.dev/" text="React" /> gets a taste,
+      and they do the tango with a <Token href="https://vuejs.org/guide/components/v-model.html" text="two-way data binding" />. It's Todo App o'clock – set your code alarms, and let the synchronization dance begin! 💃🕰️🕺
     </template>
 
     <Todo v-model="todoItems" />

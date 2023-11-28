@@ -28,7 +28,7 @@ import Link from './demos/components/link.vue'
   </p>
 
   <p class="mt-2 dark:text-gray-300">
-    Checkout the <Link href="https://github.com/h2xd/react-in-vue" text="react-in-vue repository" /> for implementation details.
+    Explore the <Link href="https://github.com/h2xd/react-in-vue" text="react-in-vue repository" /> wonderland, where the magic of React meets the charm of Vue.
   </p>
 
   <D01Button />

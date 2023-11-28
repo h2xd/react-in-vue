@@ -22,7 +22,7 @@ defineEmits(['reset'])
   </p>
 
   <div class="font-mono flex flex-row items-center text-xs mb-2 mt-4">
-    <img src="../../public/images/react-logo.svg" width="16" height="16" alt="React.js logo" class="inline-block mr-1">Component written in React.js
+    Component written in <a href="https://react.dev/" target="_blank" class="hover:underline hover:text-blue-600"><img src="../../public/images/react-logo.svg" width="16" height="16" alt="React.js logo" class="inline-block ml-1 -mt-1"> React.js</a>
   </div>
   <div class="border-2 rounded border-gray-300 mb-2 dark:border-gray-800">
     <div class="p-4 flex flex-col gap-4">
